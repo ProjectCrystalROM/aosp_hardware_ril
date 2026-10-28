@@ -1,6 +1,7 @@
 # Copyright 2006 The Android Open Source Project
 
 LOCAL_PATH:= $(call my-dir)
+ifneq ($(BOARD_PROVIDES_RILD),true)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= \
@@ -28,6 +29,8 @@ LOCAL_MODULE:= rild
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_EXECUTABLE)
+
+endif
 
 # For radiooptions binary
 # =======================
